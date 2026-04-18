@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Proofs – PES LEGENDS EF STORE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #050d1a; color: #e0e0e0; font-family: 'Poppins', sans-serif; }
+        ::-webkit-scrollbar { width: 6px; background: #050d1a; }
+        ::-webkit-scrollbar-thumb { background: #0066ff; border-radius: 10px; }
+
+        .navbar {
+            background: rgba(5,13,26,0.95);
+            backdrop-filter: blur(15px);
+            border-bottom: 2px solid #0066ff;
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, #0066ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            font-family: 'Orbitron', monospace;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo i { font-size: 2rem; color: #0066ff; -webkit-text-fill-color: #0066ff; }
+        .nav-links { display: flex; gap: 25px; flex-wrap: wrap; }
+        .nav-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 0;
+            position: relative;
+            transition: 0.3s;
+            font-family: 'Orbitron', monospace;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #0066ff;
+            transition: 0.3s;
+            box-shadow: 0 0 8px #0066ff;
+        }
+        .nav-links a:hover::after,
+        .nav-links a.active::after { width: 100%; }
+        .nav-links a:hover,
+        .nav-links a.active { color: #0066ff; text-shadow: 0 0 5px #0066ff; }
+        .menu-toggle { display: none; font-size: 1.8rem; color: #0066ff; background: none; border: none; cursor: pointer; }
+        @media (max-width: 768px) {
+            .nav-links { display: none; width: 100%; flex-direction: column; align-items: center; gap: 15px; padding: 20px 0 10px; }
+            .nav-links.active { display: flex; }
+            .menu-toggle { display: block; }
+            .navbar { padding: 15px 20px; }
+        }
+        .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px; }
+        .proofs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin: 50px 0;
+        }
+        .proof-card {
+            background: rgba(0,20,40,0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid #0066ff;
+            border-radius: 30px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        .proof-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px rgba(0,102,255,0.4);
+            border-color: #fff;
+        }
+        .proof-img {
+            width: 100%;
+            background: #0a1420;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .proof-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .proof-content { padding: 25px; text-align: center; }
+        .proof-type {
+            display: inline-block;
+            background: rgba(0,102,255,0.2);
+            color: #0066ff;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+        .proof-title { font-size: 1.5rem; font-weight: bold; margin-bottom: 8px; }
+        .proof-desc { color: #ccc; }
+        @media (max-width: 900px) {
+            .proofs-grid { grid-template-columns: 1fr; gap: 30px; }
+        }
+        .btn { display: inline-block; padding: 12px 28px; border-radius: 40px; text-decoration: none; font-weight: bold; transition: 0.3s; border: 1px solid #0066ff; background: transparent; color: #0066ff; }
+        .btn-primary { background: #0066ff; color: #000; border: none; box-shadow: 0 0 15px rgba(0,102,255,0.5); }
+        .footer { background: #02070f; border-top: 1px solid #0066ff; padding: 40px 20px 20px; text-align: center; margin-top: 80px; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="logo"><i class="fas fa-microchip"></i> PES LEGENDS <span style="color:#0066ff;">EF</span></a>
+    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+    <div class="nav-links">
+        <a href="index.html">HOME</a>
+        <a href="shop.html">SHOP</a>
+        <a href="proofs.html" class="active">PROOFS</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="faq.html">FAQ</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h1 style="text-align: center;">📸 VERIFIED SUCCESS PROOFS</h1>
+    <p style="text-align: center; margin-bottom: 30px; color: #0066ff;">Real transactions • Screenshots from real customers</p>
+
+    <div class="proofs-grid">
+        <!-- PROOF 1 -->
+        <div class="proof-card">
+            <div class="proof-img">
+                <img src="proof pics/PHOTO-2026-04-18-12-59-42.jpg" alt="Proof 1" onerror="this.src='https://placehold.co/800x600/0a1420/0066ff?text=Proof+1+%E2%80%93+Add+your+image'">
+            </div>
+            <div class="proof-content">
+                <span class="proof-type">COIN DELIVERY</span>
+                <div class="proof-title">25,600 Coins Delivered</div>
+                <div class="proof-desc">Customer from India • 6 minutes</div>
+            </div>
+        </div>
+        <!-- PROOF 2 -->
+        <div class="proof-card">
+            <div class="proof-img">
+                <img src="proof pics/PHOTO-2026-04-18-13-00-05.jpg" alt="Proof 2" onerror="this.src='https://placehold.co/800x600/0a1420/0066ff?text=Proof+2+%E2%80%93+Add+your+image'">
+            </div>
+            <div class="proof-content">
+                <span class="proof-type">ACCOUNT SALE</span>
+                <div class="proof-title">Legend Account Sold</div>
+                <div class="proof-desc">Customer from UAE • Instant payment</div>
+            </div>
+        </div>
+        <!-- PROOF 3 -->
+        <div class="proof-card">
+            <div class="proof-img">
+                <img src="proof pics/PHOTO-2026-04-18-12-58-11.jpg" alt="Proof 3" onerror="this.src='https://placehold.co/800x600/0a1420/0066ff?text=Proof+3+%E2%80%93+Add+your+image'">
+            </div>
+            <div class="proof-content">
+                <span class="proof-type">SWAP</span>
+                <div class="proof-title">Account Swap Success</div>
+                <div class="proof-desc">Between UK & Nigeria • Safe</div>
+            </div>
+        </div>
+        <!-- PROOF 4 -->
+        <div class="proof-card">
+            <div class="proof-img">
+                <img src="proof pics/PHOTO-2026-04-18-13-00-38.jpg" alt="Proof 4" onerror="this.src='https://placehold.co/800x600/0a1420/0066ff?text=Proof+4+%E2%80%93+Add+your+image'">
+            </div>
+            <div class="proof-content">
+                <span class="proof-type">COIN DELIVERY</span>
+                <div class="proof-title">12,800 Coins</div>
+                <div class="proof-desc">Customer from USA • 8 minutes</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center;"><a href="contact.html" class="btn btn-primary">JOIN OUR COMMUNITY</a></div>
+</div>
+
+<footer class="footer">
+    <div class="social-icons" style="display: flex; justify-content: center; gap: 30px; margin: 20px 0;">
+        <a href="#" id="fbLink"><i class="fab fa-facebook"></i></a>
+        <a href="#" id="igLink"><i class="fab fa-instagram"></i></a>
+        <a href="#" id="ytLink"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p>© 2026 PES LEGENDS EF STORE | Cyber Crime Approved</p>
+</footer>
+
+<script>
+    document.querySelector('.menu-toggle')?.addEventListener('click', () => {
+        document.querySelector('.nav-links')?.classList.toggle('active');
+    });
+    ['fbLink', 'igLink', 'ytLink'].forEach(id => {
+        let el = document.getElementById(id);
+        if (el) el.addEventListener('click', (e) => { e.preventDefault(); alert('Social link will be added by store owner.'); });
+    });
+</script>
+</body>
+</html>

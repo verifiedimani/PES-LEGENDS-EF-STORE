@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>FAQ – PES LEGENDS EF STORE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #050d1a; color: #e0e0e0; font-family: 'Poppins', sans-serif; }
+        ::-webkit-scrollbar { width: 6px; background: #050d1a; }
+        ::-webkit-scrollbar-thumb { background: #0066ff; border-radius: 10px; }
+        .navbar { background: rgba(5,13,26,0.95); backdrop-filter: blur(15px); border-bottom: 2px solid #0066ff; padding: 15px 30px; position: sticky; top: 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; z-index: 1000; }
+        .logo { font-size: 1.6rem; font-weight: 800; background: linear-gradient(135deg, #fff, #0066ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; font-family: 'Orbitron', monospace; display: flex; align-items: center; gap: 8px; }
+        .logo i { font-size: 2rem; color: #0066ff; -webkit-text-fill-color: #0066ff; }
+        .nav-links { display: flex; gap: 25px; flex-wrap: wrap; }
+        .nav-links a { color: #e0e0e0; text-decoration: none; font-weight: 600; padding: 8px 0; position: relative; transition: 0.3s; font-family: 'Orbitron', monospace; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: #0066ff; transition: 0.3s; box-shadow: 0 0 8px #0066ff; }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .nav-links a:hover, .nav-links a.active { color: #0066ff; text-shadow: 0 0 5px #0066ff; }
+        .menu-toggle { display: none; font-size: 1.8rem; color: #0066ff; background: none; border: none; cursor: pointer; }
+        @media (max-width: 768px) { .nav-links { display: none; width: 100%; flex-direction: column; align-items: center; gap: 15px; padding: 20px 0 10px; } .nav-links.active { display: flex; } .menu-toggle { display: block; } .navbar { padding: 15px 20px; } }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .faq-item { background: rgba(0,20,40,0.6); border-left: 4px solid #0066ff; border-radius: 16px; margin: 20px 0; overflow: hidden; }
+        .faq-question { padding: 20px; cursor: pointer; font-weight: bold; font-size: 1.2rem; display: flex; justify-content: space-between; align-items: center; background: rgba(0,102,255,0.1); }
+        .faq-answer { padding: 0 20px; max-height: 0; overflow: hidden; transition: 0.3s; color: #ccc; }
+        .faq-item.active .faq-answer { padding: 0 20px 20px; max-height: 300px; }
+        .footer { background: #02070f; border-top: 1px solid #0066ff; padding: 40px 20px 20px; text-align: center; margin-top: 80px; }
+        .btn { display: inline-block; padding: 12px 28px; border-radius: 40px; text-decoration: none; font-weight: bold; transition: 0.3s; border: 1px solid #0066ff; background: transparent; color: #0066ff; }
+        .btn-primary { background: #0066ff; color: #000; border: none; box-shadow: 0 0 15px rgba(0,102,255,0.5); }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="logo"><i class="fas fa-microchip"></i> PES LEGENDS <span style="color:#0066ff;">EF</span></a>
+    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+    <div class="nav-links">
+        <a href="index.html">HOME</a>
+        <a href="shop.html">SHOP</a>
+        <a href="proofs.html">PROOFS</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="faq.html" class="active">FAQ</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h1 style="text-align: center;">❓ FREQUENTLY ASKED QUESTIONS</h1>
+    <div class="faq-item">
+        <div class="faq-question">Is this store legit? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">Yes! PES LEGENDS EF STORE is fully approved by the Cyber Crime Bureau and has been operating safely since 2022. We have hundreds of successful transactions and real proofs.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">How fast is delivery? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">Coins: 5-10 minutes. Accounts: 10-30 minutes. Swaps: completed within 30 minutes. 24/7 support.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">What if I don't receive my order? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">You get a FULL refund. No questions asked. Just message admin with proof of payment.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">How do I avoid scammers? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">Only deal with admin Pes Legends AA. Ignore any other DMs. Our WhatsApp group is also safe – only admin posts offers.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">Can I see proof of previous deals? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">Yes! Visit our PROOFS page for real screenshots from happy customers.</div>
+    </div>
+    <div style="text-align: center; margin-top: 40px;"><a href="contact.html" class="btn btn-primary">CONTACT ADMIN</a></div>
+</div>
+
+<footer class="footer">
+    <div class="social-icons" style="display: flex; justify-content: center; gap: 30px; margin: 20px 0;">
+        <a href="#" id="fbLink"><i class="fab fa-facebook"></i></a>
+        <a href="#" id="igLink"><i class="fab fa-instagram"></i></a>
+        <a href="#" id="ytLink"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p>© 2026 PES LEGENDS EF STORE | Cyber Crime Approved</p>
+</footer>
+
+<script>
+    document.querySelector('.menu-toggle')?.addEventListener('click', () => {
+        document.querySelector('.nav-links')?.classList.toggle('active');
+    });
+    document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => {
+            q.parentElement.classList.toggle('active');
+        });
+    });
+    ['fbLink', 'igLink', 'ytLink'].forEach(id => {
+        let el = document.getElementById(id);
+        if (el) el.addEventListener('click', (e) => { e.preventDefault(); alert('Social link will be added by store owner.'); });
+    });
+</script>
+</body>
+</html>

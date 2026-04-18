@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Shop – PES LEGENDS EF STORE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #050d1a; color: #e0e0e0; font-family: 'Poppins', sans-serif; }
+        ::-webkit-scrollbar { width: 6px; background: #050d1a; }
+        ::-webkit-scrollbar-thumb { background: #0066ff; border-radius: 10px; }
+
+        .navbar {
+            background: rgba(5,13,26,0.95);
+            backdrop-filter: blur(15px);
+            border-bottom: 2px solid #0066ff;
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, #0066ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            font-family: 'Orbitron', monospace;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo i { font-size: 2rem; color: #0066ff; -webkit-text-fill-color: #0066ff; }
+        .nav-links { display: flex; gap: 25px; flex-wrap: wrap; }
+        .nav-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 0;
+            position: relative;
+            transition: 0.3s;
+            font-family: 'Orbitron', monospace;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #0066ff;
+            transition: 0.3s;
+            box-shadow: 0 0 8px #0066ff;
+        }
+        .nav-links a:hover::after,
+        .nav-links a.active::after { width: 100%; }
+        .nav-links a:hover,
+        .nav-links a.active { color: #0066ff; text-shadow: 0 0 5px #0066ff; }
+        .menu-toggle { display: none; font-size: 1.8rem; color: #0066ff; background: none; border: none; cursor: pointer; }
+        @media (max-width: 768px) {
+            .nav-links { display: none; width: 100%; flex-direction: column; align-items: center; gap: 15px; padding: 20px 0 10px; }
+            .nav-links.active { display: flex; }
+            .menu-toggle { display: block; }
+            .navbar { padding: 15px 20px; }
+        }
+        .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px; }
+
+        /* Calculator */
+        .calculator {
+            background: rgba(0,20,40,0.8);
+            border: 2px solid #0066ff;
+            border-radius: 30px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        .calc-slider {
+            width: 100%;
+            max-width: 500px;
+            margin: 20px auto;
+            -webkit-appearance: none;
+            background: #0066ff;
+            height: 6px;
+            border-radius: 10px;
+        }
+        .calc-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 22px;
+            height: 22px;
+            background: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 15px #0066ff;
+        }
+        .calc-price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #0066ff;
+            margin: 20px 0;
+        }
+        .add-to-cart-btn {
+            background: #0066ff;
+            color: #000;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        .cart-preview {
+            background: rgba(0,20,40,0.8);
+            border: 1px solid #0066ff;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .cart-items { list-style: none; margin: 15px 0; }
+        .cart-items li { display: flex; justify-content: space-between; padding: 8px; border-bottom: 1px solid rgba(0,102,255,0.3); }
+        .remove-item { color: #ff4444; cursor: pointer; margin-left: 10px; }
+        .checkout-btn { background: #00cc66; color: #000; border: none; padding: 12px 25px; border-radius: 40px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+        .btn { display: inline-block; padding: 12px 28px; border-radius: 40px; text-decoration: none; font-weight: bold; transition: 0.3s; border: 1px solid #0066ff; background: transparent; color: #0066ff; cursor: pointer; }
+        .btn-primary { background: #0066ff; color: #000; border: none; box-shadow: 0 0 15px rgba(0,102,255,0.5); }
+        .footer { background: #02070f; border-top: 1px solid #0066ff; padding: 40px 20px 20px; text-align: center; margin-top: 80px; }
+        @media (max-width: 768px) { .calc-price { font-size: 1.5rem; } }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="logo"><i class="fas fa-microchip"></i> PES LEGENDS <span style="color:#0066ff;">EF</span></a>
+    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+    <div class="nav-links">
+        <a href="index.html">HOME</a>
+        <a href="shop.html" class="active">SHOP</a>
+        <a href="proofs.html">PROOFS</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="faq.html">FAQ</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h1 style="text-align: center;">💰 LIVE COIN CALCULATOR & SHOP</h1>
+    <div class="calculator">
+        <h2><i class="fas fa-calculator"></i> Select Coin Amount</h2>
+        <input type="range" id="coinSlider" class="calc-slider" min="150" max="100000" step="50" value="1000">
+        <div class="calc-price" id="coinAmount">1,000 🪙</div>
+        <div class="calc-price" id="coinPriceUSD" style="font-size: 1.5rem;">$8.00 USD</div>
+        <div class="calc-price" id="coinPriceINR" style="font-size: 1.2rem;">₹730</div>
+        <div class="calc-price" id="coinPriceNGN" style="font-size: 1.2rem;">₦10,850</div>
+        <button class="add-to-cart-btn" id="addToCartBtn">➕ ADD TO CART</button>
+    </div>
+
+    <div class="cart-preview">
+        <h3><i class="fas fa-shopping-cart"></i> YOUR CART</h3>
+        <ul class="cart-items" id="cartItems"></ul>
+        <div><strong>Total: </strong><span id="cartTotal">$0.00</span></div>
+        <button class="checkout-btn" id="checkoutBtn">CHECKOUT ON WHATSAPP</button>
+        <p style="font-size: 0.8rem; margin-top: 10px;">✅ 100% secure • You will be redirected to admin after checkout</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+        <p style="color: #0066ff;">📌 Extended coin range: 150 to 100,000 🪙 • Realistic pricing algorithm</p>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="social-icons" style="display: flex; justify-content: center; gap: 30px; margin: 20px 0;">
+        <a href="#" id="fbLink2"><i class="fab fa-facebook"></i></a>
+        <a href="#" id="igLink2"><i class="fab fa-instagram"></i></a>
+        <a href="#" id="ytLink2"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p>© 2026 PES LEGENDS EF STORE | Cyber Crime Approved</p>
+</footer>
+
+<script>
+    // Mobile menu
+    document.querySelector('.menu-toggle')?.addEventListener('click', () => {
+        document.querySelector('.nav-links')?.classList.toggle('active');
+    });
+
+    // Pricing logic (realistic)
+    function calculatePrice(coins) {
+        // Base: 1000 coins = $8
+        // Scale with slight discount for larger amounts
+        let usd = (coins / 1000) * 8;
+        // Apply bulk discount (max 30%)
+        let discount = Math.min(0.3, (coins - 1000) / 100000 * 0.3);
+        usd = usd * (1 - discount);
+        usd = Math.round(usd * 100) / 100;
+        let inr = usd * 85;
+        let ngn = usd * 1360;
+        return { usd, inr, ngn };
+    }
+
+    let cart = [];
+
+    function updateCalculator() {
+        let coins = parseInt(document.getElementById('coinSlider').value);
+        let price = calculatePrice(coins);
+        document.getElementById('coinAmount').innerText = coins.toLocaleString() + ' 🪙';
+        document.getElementById('coinPriceUSD').innerText = `$${price.usd.toFixed(2)} USD`;
+        document.getElementById('coinPriceINR').innerText = `₹${Math.round(price.inr)} INR`;
+        document.getElementById('coinPriceNGN').innerText = `₦${Math.round(price.ngn)} NGN`;
+        window.currentCoinPrice = price;
+        window.currentCoins = coins;
+    }
+
+    document.getElementById('coinSlider').addEventListener('input', updateCalculator);
+    updateCalculator();
+
+    document.getElementById('addToCartBtn').addEventListener('click', () => {
+        let coins = window.currentCoins;
+        let price = window.currentCoinPrice;
+        cart.push({ coins, usd: price.usd, inr: price.inr, ngn: price.ngn });
+        renderCart();
+    });
+
+    function renderCart() {
+        let cartList = document.getElementById('cartItems');
+        let totalUSD = 0;
+        cartList.innerHTML = '';
+        cart.forEach((item, index) => {
+            totalUSD += item.usd;
+            let li = document.createElement('li');
+            li.innerHTML = `${item.coins.toLocaleString()} 🪙 - $${item.usd.toFixed(2)} <span class="remove-item" data-index="${index}">❌</span>`;
+            cartList.appendChild(li);
+        });
+        document.getElementById('cartTotal').innerText = `$${totalUSD.toFixed(2)} USD`;
+        // attach remove handlers
+        document.querySelectorAll('.remove-item').forEach(el => {
+            el.addEventListener('click', (e) => {
+                let idx = parseInt(el.getAttribute('data-index'));
+                cart.splice(idx, 1);
+                renderCart();
+            });
+        });
+    }
+
+    document.getElementById('checkoutBtn').addEventListener('click', () => {
+        if (cart.length === 0) {
+            alert('Your cart is empty. Add some coins first.');
+            return;
+        }
+        let totalUSD = cart.reduce((sum, item) => sum + item.usd, 0).toFixed(2);
+        let message = `Hello Pes Legends AA, I want to purchase:\n`;
+        cart.forEach(item => {
+            message += `- ${item.coins.toLocaleString()} coins ($${item.usd.toFixed(2)})\n`;
+        });
+        message += `\nTotal: $${totalUSD}\nPlease provide payment details.`;
+        window.open(`https://wa.me/447361496256?text=${encodeURIComponent(message)}`, '_blank');
+    });
+
+    // Social placeholders
+    ['fbLink', 'igLink', 'ytLink', 'fbLink2', 'igLink2', 'ytLink2'].forEach(id => {
+        let el = document.getElementById(id);
+        if (el) el.addEventListener('click', (e) => { e.preventDefault(); alert('Social link will be added by store owner.'); });
+    });
+</script>
+</body>
+</html>

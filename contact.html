@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Contact – PES LEGENDS EF STORE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #050d1a; color: #e0e0e0; font-family: 'Poppins', sans-serif; }
+        ::-webkit-scrollbar { width: 6px; background: #050d1a; }
+        ::-webkit-scrollbar-thumb { background: #0066ff; border-radius: 10px; }
+        .navbar { background: rgba(5,13,26,0.95); backdrop-filter: blur(15px); border-bottom: 2px solid #0066ff; padding: 15px 30px; position: sticky; top: 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; z-index: 1000; }
+        .logo { font-size: 1.6rem; font-weight: 800; background: linear-gradient(135deg, #fff, #0066ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; font-family: 'Orbitron', monospace; display: flex; align-items: center; gap: 8px; }
+        .logo i { font-size: 2rem; color: #0066ff; -webkit-text-fill-color: #0066ff; }
+        .nav-links { display: flex; gap: 25px; flex-wrap: wrap; }
+        .nav-links a { color: #e0e0e0; text-decoration: none; font-weight: 600; padding: 8px 0; position: relative; transition: 0.3s; font-family: 'Orbitron', monospace; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: #0066ff; transition: 0.3s; box-shadow: 0 0 8px #0066ff; }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .nav-links a:hover, .nav-links a.active { color: #0066ff; text-shadow: 0 0 5px #0066ff; }
+        .menu-toggle { display: none; font-size: 1.8rem; color: #0066ff; background: none; border: none; cursor: pointer; }
+        @media (max-width: 768px) { .nav-links { display: none; width: 100%; flex-direction: column; align-items: center; gap: 15px; padding: 20px 0 10px; } .nav-links.active { display: flex; } .menu-toggle { display: block; } .navbar { padding: 15px 20px; } }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 40px 0; }
+        .contact-card { background: rgba(0,20,40,0.8); backdrop-filter: blur(10px); border: 1px solid #0066ff; border-radius: 24px; padding: 30px; text-align: center; transition: 0.3s; }
+        .contact-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,102,255,0.3); border-color: #fff; }
+        .contact-card i { font-size: 3rem; color: #0066ff; margin-bottom: 15px; }
+        .admin-name { font-size: 1.8rem; font-weight: bold; margin: 10px 0; color: #0066ff; }
+        .btn { display: inline-block; padding: 12px 28px; border-radius: 40px; text-decoration: none; font-weight: bold; transition: 0.3s; border: 1px solid #0066ff; background: transparent; color: #0066ff; cursor: pointer; }
+        .btn-primary { background: #0066ff; color: #000; border: none; box-shadow: 0 0 15px rgba(0,102,255,0.5); }
+        .warning { background: rgba(255,0,0,0.1); border-left: 4px solid #ff3333; padding: 20px; margin: 30px 0; border-radius: 12px; }
+        .footer { background: #02070f; border-top: 1px solid #0066ff; padding: 40px 20px 20px; text-align: center; margin-top: 80px; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="logo"><i class="fas fa-microchip"></i> PES LEGENDS <span style="color:#0066ff;">EF</span></a>
+    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+    <div class="nav-links">
+        <a href="index.html">HOME</a>
+        <a href="shop.html">SHOP</a>
+        <a href="proofs.html">PROOFS</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html" class="active">CONTACT</a>
+        <a href="faq.html">FAQ</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h1 style="text-align: center;">📞 CONTACT ADMIN</h1>
+    <div class="card-grid">
+        <div class="contact-card">
+            <i class="fas fa-user-astronaut"></i>
+            <div class="admin-name">PES LEGENDS AA</div>
+            <p>Owner & Verified Admin • 24/7 Support</p>
+            <a href="https://wa.me/447361496256?text=Hello%20Pes%20Legends%20AA%2C%20I%20need%20assistance" class="btn btn-primary" style="margin-top: 15px;">CHAT ON WHATSAPP</a>
+        </div>
+        <div class="contact-card">
+            <i class="fab fa-whatsapp"></i>
+            <div class="admin-name">WHATSAPP GROUP</div>
+            <p>Join our community of 500+ trusted members</p>
+            <a href="#" id="groupLink" class="btn btn-primary" style="margin-top: 15px;">JOIN GROUP</a>
+        </div>
+    </div>
+
+    <div class="warning">
+        <i class="fas fa-exclamation-triangle"></i> <strong>⚠️ IMPORTANT WARNING ⚠️</strong><br>
+        ONLY deal with admin <strong>Pes Legends AA</strong>. Scammers may contact you pretending to be us.<br>
+        ✅ We never ask for your password before payment. ✅ We have a 100% refund policy.<br>
+        ❌ If you deal with anyone else, we are NOT responsible.
+    </div>
+
+    <div style="text-align: center; margin: 40px 0;">
+        <p><i class="fas fa-envelope"></i> For business inquiries: Peslegends6587@gmail.com (Admins Personal Email)</p>
+        <p><i class="fas fa-clock"></i> Response time: Under 5 minutes (24/7)</p>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="social-icons" style="display: flex; justify-content: center; gap: 30px; margin: 20px 0;">
+        <a href="#" id="fbLink"><i class="fab fa-facebook"></i></a>
+        <a href="#" id="igLink"><i class="fab fa-instagram"></i></a>
+        <a href="#" id="ytLink"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p>© 2026 PES LEGENDS EF STORE | Cyber Crime Approved</p>
+</footer>
+
+<script>
+    document.querySelector('.menu-toggle')?.addEventListener('click', () => {
+        document.querySelector('.nav-links')?.classList.toggle('active');
+    });
+    document.getElementById('groupLink')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.open('https://chat.whatsapp.com/Hq8PP8zixTw1RTetTzzkpo?mode=gi_t', '_blank');
+    });
+    ['fbLink', 'igLink', 'ytLink'].forEach(id => {
+        let el = document.getElementById(id);
+        if (el) el.addEventListener('click', (e) => { e.preventDefault(); alert('Social link will be added by store owner.'); });
+    });
+</script>
+</body>
+</html>
